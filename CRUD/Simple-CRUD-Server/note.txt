@@ -1,0 +1,40 @@
+1.sob modules install korlam
+2.main hocche index.js, tai agei express ke require korlam and require diye bakicode gulao bosailam
+3.Mongodb connect er code boshailam
+4.Client side er jonne react application banailam (Client->Server->Database)
+5.client e form banailam,ekhon server e client theke data ana lagbe,tai api banabo..tai post method use korbo
+6.MongoDB account 
+** 2 types of errors: 1.ServerConnectionError - AddNewIpAdress,BadAuth-paste updated password
+--------------------------------------------------------------------------------------------------
+7.CREATE - POST 
+app.post()
+using async to use await 
+by using express.json() middleware,we can access data from body, const user=req.body
+const result=await userCollection.insertOne(doc)
+res.send(result)
+
+Client:
+1.create fetch
+2.Add second parameter as an object
+3.provide method:'POST'
+4.add headers:{'content-type'}
+5.add body:JSON.stringify(user)
+----------------------------------------------------------------------------------------------------
+8.Read 
+
+1.create a cursor=userCollection.find()
+2.const result=await cursor.toArray()
+
+Client:
+1.UseLoader use korsi 
+2.fetch and second parameter add korsi 
+-------------------------------------------------------------------------------------------------------
+9.Delete
+
+1.create app.delete('/users/:id',async(req,res)=>{})
+2.specifify unique objectID and write query
+3.const result=await userCollection.deleteOne(query)
+
+Client:
+1.create dynamic url with id 
+2.mention the DELETE method
